@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htm5/css3</title>
+    <link rel="stylesheet" href="./css/demohtml5.css">
+</head>
+
+<body>
+    <!-- <div class="test">
+
+    </div>
+    <form action="">
+        <input type="color" name="" id="">
+    </form>
+    <audio src="./audio/ThangDien-JustaTeePhuongLy-5704841.mp3" controls autoplay loop>
+    </audio>
+    <iframe width="1425" height="581" src="https://www.youtube.com/embed/fTXd-DpN3AI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <canvas id="canvas" width="500px" height="200px">
+        <p>trình duyệt không hỗ trợ canvas</p>
+    </canvas> -->
+
+    <div class="getLocation">
+        <p>xác định vị trí</p>
+        <button onclick="getLocation()">ok</button>
+        <p id="getLocation"></p>
+    </div>
+     <!-- <script>
+        var canvas= document.getElementById('canvas');
+        var context= canvas.getContext('2d');
+        context.moveTo(0,0);// xác định điểm bắt đầu
+        context.lineTo(500,200);// xác định điểm kết thúc
+        context.beginPath();
+        context.arc(250,100,80,0,2*Math.PI);
+        context.stroke();
+
+        context.strokeStyle = 'red';// đường viền
+        context.fillStyle ='green';// màu nền trong
+        context.lineWidth=10;//thiết lập độ rộng của đường viền
+         context.fillRect(25,25,100,100);//vẽ hình chữ nhật k đổi màu
+         context.strokeRect(25,25,100,100);//vẽ hình chữ nhật đã đc tô màu
+    </script> -->
+    <script>
+        var getLocation1 = document.getElementById('getLocation');
+        // function getLocation(){
+        //     if(navigator.geolocation){
+        //         navigator.geolocation.getCurrentPosition(showPosition);
+        //     }else{
+        //         getLocation1.innerText="trinh duyet khong ho tro";
+        //     }
+        // }
+        // function showPosition(position){
+        //     getLocation1.innerText= 'kinh do: '+position.coords.latitude + 'vi do: '+position.coords.longitude;
+        // }
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                getLocation1.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position) {
+            getLocation1.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+                console.log("Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude)
+        }
+    </script>
+</body>
+
+</html>
